@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean id="engineBean" class="se.car.Engine">
+            <property name="engineName" value="Toshiba"/>
+        </bean>
+
+    <bean id="carBean" class="se.car.Car" >
+        <property name="carName" value="Audi"/>
+        <property name="engineName" ref="engineBean"/>
+    </bean>
+
+    <!--    We can use inner bean instead of ref attribute:-->
+    <!--    <bean id="carBean" class="se.car.Car">-->
+    <!--        <property name="carName" value="Audi"/>-->
+    <!--        <property name="engineName" >-->
+    <!--            <bean id="engineBean" class="se.car.Engine">-->
+    <!--                <property name="engineName" value="Toshiba"/>-->
+    <!--            </bean>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+
+
+</beans>

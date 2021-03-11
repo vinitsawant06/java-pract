@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="e" class="se.autowire.byType.Engine" >
+        <property name="modelYear" value="2015"/>
+    </bean>
+    <bean id="e1" class="se.autowire.byType.Engine" autowire-candidate="false">
+        <property name="modelYear" value="2016"/>
+    </bean>
+    <bean id="c" class="se.autowire.byType.Car" autowire="byType" >
+    </bean>
+</beans>

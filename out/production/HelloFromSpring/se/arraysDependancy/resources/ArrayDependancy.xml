@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:property-placeholder location="classpath:se/arraysDependancy/resources/application.properties"/>
+    <context:annotation-config/>
+    <bean id="arrayDependancy" class="se.arraysDependancy.ArrayDependacy">
+        <property name="name" value="Vinit"/>
+        <property name="myArray" >
+            <list>
+                <value>Vinit</value>
+                <value>abc</value>
+                <value>def</value>
+                <value>jkl</value>
+            </list>
+        </property>
+        <property name="fruits" >
+            <list>
+                <value>Apple</value>
+                <value>Banana</value>
+                <value>Watermelon</value>
+                <value>Orange</value>
+            </list>
+        </property>
+        <property name="cricketers">
+            <set>
+                <value>Sachin</value>
+                <value>Virat</value>
+                <value>Rohit</value>
+            </set>
+        </property>
+        <property name="country_Capitals">
+            <map>
+                <entry key="India" value="Delhi"/>
+                <entry key="US" value="Washington"/>
+                <entry key="France" value="Paris"/>
+                <entry key="Spain" value="Madrid"/>
+            </map>
+        </property>
+        <property name="drivers">
+            <props>
+                <prop key="connection">${url}</prop>
+            </props>
+        </property>
+    </bean>
+
+
+</beans>
